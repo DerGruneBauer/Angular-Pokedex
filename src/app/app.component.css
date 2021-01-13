@@ -1,0 +1,25 @@
+.outsideWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.insideWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: auto;
+}
+
+h1 {
+    margin: 10px;
+}
+
+a {
+    margin: 5px;
+}

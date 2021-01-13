@@ -1,0 +1,17 @@
+<div class="dashboard">
+  <h2>My Pokemon Team</h2>
+  <div class="teamPokemon">Example</div>
+  <div class="listOfPokemonWrapper">
+    <div
+      class="individualCard"
+      *ngFor="let pokemon of pokemonList; let i = index">
+      <div class="backgroundId">{{ pokemonList[i].id }}</div>
+      <img
+        src="{{ this.pokemonList[i].sprites.front_default }}"
+        alt="{{ pokemonList[i].name }}"
+      /><br />
+      <span>Name: {{ pokemonList[i].name }}</span>
+    </div>
+  </div>
+</div>
+<app-search-pokemon></app-search-pokemon>

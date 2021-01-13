@@ -1,0 +1,38 @@
+.listOfPokemonWrapper{
+    display: inline-grid;
+    width: 100vw;
+    height: 200px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    grid-auto-columns: 200px;
+    column-gap: 10px;
+}
+
+.individualCard {
+    margin: 10px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border: solid 1px black;
+}
+
+.backgroundId {
+    opacity: .5;
+    color: pink;
+    font-size: 100px;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: absolute;
+    background-color: lightblue;
+}
+
+.dashboard {
+    overflow: scroll;
+    width: 100vw;
+    height: 500px;
+}
+
+span {
+    font-size: 15px;
+}

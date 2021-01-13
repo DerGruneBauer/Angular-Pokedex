@@ -1,0 +1,3 @@
+<p>information-pokemon works!</p>
+<div class="pokemonList" *ngFor="let pokemon of pokemonList | keyvalue">{{pokemonList.id}} - {{ pokemonList.name }}</div>
+<button (click)="addPokemonToTeam(pokemon)">Add To Team</button>
