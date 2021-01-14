@@ -10,6 +10,8 @@ import { InformationPokemonComponent } from './information-pokemon/information-p
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component'
 import { HttpClientModule } from '@angular/common/http';
+import { TeamPokemonComponent } from './team-pokemon/team-pokemon.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     PokemonsComponent,
     SearchPokemonComponent,
     InformationPokemonComponent,
-    DashboardComponent
+    DashboardComponent,
+    TeamPokemonComponent,
   ],
   imports: [
     BrowserModule,

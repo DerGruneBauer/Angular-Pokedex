@@ -1,3 +1,14 @@
 .searchArea {
-    background-color: pink;
+  border: solid red 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+    height: 30px;
+    width: 300px;
+    border-radius: 5px;
+    padding-left: 10px;
 }

@@ -1,6 +1,4 @@
 <div class="dashboard">
-  <h2>My Pokemon Team</h2>
-  <div class="teamPokemon">Example</div>
   <div class="listOfPokemonWrapper">
     <div
       class="individualCard"
@@ -10,7 +8,8 @@
         src="{{ this.pokemonList[i].sprites.front_default }}"
         alt="{{ pokemonList[i].name }}"
       /><br />
-      <span>Name: {{ pokemonList[i].name }}</span>
+      <div class="pokemonName">{{ pokemonList[i].name }}</div>
+    <button class="addPokeButton" (click)="addToTeam(pokemonList[i])">Add to Team</button>
     </div>
   </div>
 </div>

@@ -1,38 +1,66 @@
+/* POSSIBLE FONTS FOR NUMBERS */
+/* font-family: 'Architects Daughter', cursive;
+font-family: 'Barlow', sans-serif;
+font-family: 'Oswald', sans-serif; dont like this one as much
+font-family: 'Potta One', cursive;  dont really like this one either */
+
 .listOfPokemonWrapper{
     display: inline-grid;
     width: 100vw;
-    height: 200px;
-    grid-template-columns: repeat(3, 1fr);
+    height: 300px;
     grid-auto-flow: column;
     grid-auto-columns: 200px;
     column-gap: 10px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 }
 
 .individualCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 10px;
-    height: 100%;
+    height: 80%;
     width: 100%;
     position: relative;
-    border: solid 1px black;
+    border: solid black 1px; /*snap scroll seems to work with border but when removed does not work well */
+    scroll-snap-align: center;
 }
 
 .backgroundId {
-    opacity: .5;
-    color: pink;
-    font-size: 100px;
+    opacity: .3;
+    color: black;
+    font-style: italic;
+    font-size: 1500%;
+    font-family: 'Barlow', sans-serif;
     width: 100%;
     height: 100%;
     z-index: -2;
     position: absolute;
-    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    position: relative;
+    top: 30px;
 }
 
 .dashboard {
-    overflow: scroll;
     width: 100vw;
-    height: 500px;
+    height: 50vh;
 }
 
-span {
-    font-size: 15px;
+.pokemonName {
+    position: relative;
+    top: 40px;
+    font-size: 30px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.addPokeButton {
+    position: relative;
+    top: 60px;
 }
