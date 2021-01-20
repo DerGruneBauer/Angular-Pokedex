@@ -1,4 +1,14 @@
 <div class="pokemonTeamWrapper">
     <h1>My Pokemon Team</h1>
-<div class="pokeTeamMember">Example</div>
+    <div class="emptyTeamMessage" *ngIf="teamMembers.length < 1">Your team is empty! You can add up to 6 Pokemon.
+    </div>
+    <div class="listOfTeamPokemonWrapper">
+        <div class="pokeTeamMember" *ngFor="let teamMember of teamMembers">
+            <div class="backgroundId">{{ teamMember.id }}</div>
+            <a routerLink="/information">
+                <img src="{{ this.teamMember.sprites.front_default }}" alt="{{ teamMember.name }}" /></a><br />
+            <div class="pokemonName">{{ teamMember.name }}</div>
+            <button class="removePokeButton" title="Remove from team">Remove</button>
+        </div>
+    </div>
 </div>

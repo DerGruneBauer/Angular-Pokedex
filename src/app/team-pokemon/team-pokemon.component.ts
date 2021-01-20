@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { PokemonService } from '../pokemon.service';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-team-pokemon',
@@ -13,4 +15,8 @@ export class TeamPokemonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get teamMembers(){
+    return this.pokemonService.getMyTeamList();
+  }
+ 
 }

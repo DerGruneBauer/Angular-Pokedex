@@ -6,6 +6,7 @@ import { AppComponent } from '../app.component';
 import { InformationPokemonComponent } from '../information-pokemon/information-pokemon.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { TeamPokemonComponent } from '../team-pokemon/team-pokemon.component';
+import { SearchPokemonComponent } from '../search-pokemon/search-pokemon.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'team', component: TeamPokemonComponent },
+  { path: 'search', component: SearchPokemonComponent },
 ];
 
 @NgModule({

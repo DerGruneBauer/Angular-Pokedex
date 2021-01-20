@@ -1,5 +1,4 @@
 .searchArea {
-  border: solid red 1px;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -18,7 +18,7 @@ export class InformationPokemonComponent implements OnInit {
   }
 
   get pokemons() {
-    return this.pokemonService.getApi();
+    return this.pokemonService.multipleApiCall();
   }
 
 

@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component'
 import { HttpClientModule } from '@angular/common/http';
 import { TeamPokemonComponent } from './team-pokemon/team-pokemon.component';
+import { PokemonService } from './pokemon.service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { TeamPokemonComponent } from './team-pokemon/team-pokemon.component';
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [DashboardComponent, PokemonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,16 +1,15 @@
 <div class="dashboard">
-  <div class="listOfPokemonWrapper">
+  <div #pokemonWrapper class="listOfPokemonWrapper">
     <div
       class="individualCard"
       *ngFor="let pokemon of pokemonList; let i = index">
       <div class="backgroundId">{{ pokemonList[i].id }}</div>
-      <img
+     <a routerLink="/information"> <img
         src="{{ this.pokemonList[i].sprites.front_default }}"
         alt="{{ pokemonList[i].name }}"
-      /><br />
+      /></a><br />
       <div class="pokemonName">{{ pokemonList[i].name }}</div>
-    <button class="addPokeButton" (click)="addToTeam(pokemonList[i])">Add to Team</button>
     </div>
   </div>
+  <button class="addPokeButton" (click)="addToTeam(pokemonList)">Add to My Team</button>
 </div>
-<app-search-pokemon></app-search-pokemon>

@@ -1,25 +1,33 @@
-.outsideWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-}
 
 .insideWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    height: 100%;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f0f0f0;
+}
+
+.titleAndNav {
+    height: 15%;
+    background-color: #ee1515;
+    color: #222224;
+    text-align: center;
+    border-bottom: solid 5px #222224;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 h1 {
-    margin: 10px;
+    margin: 25px 0 10px 0;
 }
 
 a {
     margin: 5px;
+    text-decoration: none;
+    color: #222224;
+}
+a:visited {
+    color: #222224;
 }

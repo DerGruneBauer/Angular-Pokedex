@@ -1,11 +1,11 @@
-
-<div class="outsideWrapper">
-    <div class="insideWrapper">
-      <h1>{{ title }}</h1>
-      <nav>
-        <a routerLink="/dashboard">Main</a>
-        <a routerLink="/team">My Pokemon Team</a>
-      </nav>
-      <router-outlet></router-outlet>
-    </div>
+<div class="insideWrapper">
+  <div class="titleAndNav">
+    <h1>{{ title }}</h1>
+    <nav>
+      <a routerLink="/dashboard">Main</a>
+      <a routerLink="/team">My Pokemon Team</a>
+      <a routerLink="/search">Search</a>
+    </nav>
   </div>
+  <router-outlet></router-outlet>
+</div>
