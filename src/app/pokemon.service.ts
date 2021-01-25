@@ -62,4 +62,9 @@ export class PokemonService {
     return this.pokemonInfo;
   }
 
+  searchPoke(name: string) {
+    let response = this.httpClient.get(this.pokeUrl+name);
+    return response;
+  }
+
 }

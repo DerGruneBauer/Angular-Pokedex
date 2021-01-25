@@ -1,4 +1,20 @@
 <div class="searchArea">
   <h3>Search For a Pokemon Below</h3>
-  <input placeholder="Search for a Pokemon" type="text"/>
+  <input placeholder="Search for a Pokemon" type="text" (keyup.enter)="searchPoke()"/>
+  <div *ngIf = "counter > 0" class="pokeInformation">
+    <div class="name">{{ searchedPoke.name | titlecase }}</div>
+    <div class="image">
+      <img
+        src="{{ searchedPoke.sprites.front_default }}"
+        alt="{{ searchedPoke.name }}"
+      />
+    </div>
+    <br />
+    <div class="stats">
+     <div class="statsTitle">Stats:</div>
+     <strong>Id:</strong> {{ searchedPoke.id }} <br />
+      <strong>Type:</strong> {{ searchedPoke.types[0].type.name | titlecase }}<br/>
+      <strong>Base Experience: </strong> {{ searchedPoke.base_experience }}
+    </div>
+  </div>
 </div>
