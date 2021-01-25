@@ -11,19 +11,24 @@ export class PokemonService {
 
   constructor(private httpClient: HttpClient) { }
   
+  i = 0;
   pokeUrl = `https://pokeapi.co/api/v2/pokemon/`;
 
-
-  public multipleApiCall() {
+  public getApiCall() {
+    //possible lazy loading solution to have next 10 load when second to last is present in screen.
+    this.i = this.i + 10;
     let responseArray = [];
-    for(let i = 1; i < 7; i++){
-      let response = this.httpClient.get(this.pokeUrl+i);
+    for(let k = 1; k < this.i; k++){ 
+      let response = this.httpClient.get(this.pokeUrl+k);
       responseArray.push(response);
     }
+    console.log(this.i);
     return forkJoin(responseArray);
+    
   }
 
   myTeamList: Pokemon[] = [];
+  pokemonInfo: Pokemon[] = [];
 
   addToTeam(pokemon: Pokemon): PokemonService {
     this.myTeamList.push(pokemon);
@@ -33,16 +38,28 @@ export class PokemonService {
     }else{
       return this;
     }
-
   }
 
-  // deleteFromTeam(id: number): PokemonService {
-  //   let index = this.myTeamList.findIndex(x => x.id === id);
-  //   return this.myTeamList.splice(index, 1);
-  // }
+  deleteFromTeam(id: number) {
+    return this.myTeamList.splice(id, 1);
+  }
 
   getMyTeamList(): Pokemon[] {
     return this.myTeamList;
+  }
+
+  getInformation(pokemon: Pokemon) {
+    this.pokemonInfo.push(pokemon);
+    if(this.pokemonInfo.length > 1){
+      this.pokemonInfo.splice(0,1);
+      return this;
+    }else{
+      return this;
+    }
+  }
+
+  returnInformation(): Pokemon[]{
+    return this.pokemonInfo;
   }
 
 }

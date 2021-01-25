@@ -4,12 +4,13 @@
       class="individualCard"
       *ngFor="let pokemon of pokemonList; let i = index">
       <div class="backgroundId">{{ pokemonList[i].id }}</div>
-     <a routerLink="/information"> <img
+     <img
         src="{{ this.pokemonList[i].sprites.front_default }}"
         alt="{{ pokemonList[i].name }}"
-      /></a><br />
-      <div class="pokemonName">{{ pokemonList[i].name }}</div>
+      /><br />
+      <div class="pokemonName">{{ pokemonList[i].name | titlecase }}</div>
     </div>
   </div>
   <button class="addPokeButton" (click)="addToTeam(pokemonList)">Add to My Team</button>
+  <button routerLink="/information" (click)="getInformation(infoPoke)" class="seeInformation">See More Info</button>
 </div>

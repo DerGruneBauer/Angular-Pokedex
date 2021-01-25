@@ -1,25 +1,28 @@
-.listOfTeamPokemonWrapper{
-    display: inline-grid;
-    width: 100vw;
-    height: 300px;
-    grid-auto-flow: column;
-    grid-auto-columns: 200px;
-    column-gap: 10px;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-}
-
 .pokemonTeamWrapper {
     width: 100vw;
-    height: 50vh;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
     text-align: center;
+    margin-bottom: 25px;
 }
 
 .emptyTeamMessage {
     text-align: center;
+}
+
+.listOfTeamPokemonWrapper{
+    display: inline-grid;
+    width: 100vw;
+    height: 60vh;
+    grid-auto-flow: column;
+    grid-auto-columns: 200px;
+    column-gap: 30px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 }
 
 .pokeTeamMember {
@@ -31,38 +34,39 @@ h1 {
     height: 80%;
     width: 100%;
     position: relative;
-    border: solid black 1px; /*snap scroll seems to work with border but when removed does not work well */
     scroll-snap-align: center;
 }
 
 .backgroundId {
-    opacity: .3;
+    font-weight: bold;
     color: black;
     font-style: italic;
-    font-size: 1500%;
+    font-size: 30px;
     font-family: 'Barlow', sans-serif;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 img {
     position: relative;
     top: 30px;
+    height: 200px;
 }
 
 .pokemonName {
     position: relative;
     top: 40px;
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Barlow', sans-serif;
 }
 
 .removePokeButton {
-    position: relative;
-    top: 60px;
+    height: 28px;
+    width: 28px;
+    background-image: url('/assets/trash.svg');
+    background-position: center;
+    background-size: cover;
+    align-self: flex-end;
+    z-index: 10;
+}
+.removePokeButton:hover {
+    cursor: pointer;
 }

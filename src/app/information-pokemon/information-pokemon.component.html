@@ -1,3 +1,18 @@
-<p>information-pokemon works!</p>
-<!-- <div class="pokemonList" *ngFor="let pokemon of pokemonList | keyvalue">{{pokemonList.id}} - {{ pokemonList.name }}</div>
-<button (click)="addPokemonToTeam(pokemon)">Add To Team</button> -->
+<div class="infoWrapper">
+  <div class="pokeInformation" *ngFor="let info of information">
+    <div class="name">{{ information[0].name | titlecase }}</div>
+    <div class="image">
+      <img
+        src="{{ information[0].sprites.front_default }}"
+        alt="{{ information[0].name }}"
+      />
+    </div>
+    <br />
+    <div class="stats">
+     <div class="statsTitle">Stats:</div>
+     <strong>Id:</strong> {{ information[0].id }} <br />
+      <strong>Type:</strong> {{ information[0].types[0].type.name | titlecase }}<br/>
+      <strong>Base Experience: </strong> {{ information[0].base_experience }}
+    </div>
+  </div>
+</div>

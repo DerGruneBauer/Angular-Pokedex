@@ -17,6 +17,7 @@
     border-bottom: solid 5px #222224;
     width: 100%;
     margin-bottom: 50px;
+    color: whitesmoke;
 }
 
 h1 {
@@ -26,7 +27,7 @@ h1 {
 a {
     margin: 5px;
     text-decoration: none;
-    color: #222224;
+    color: whitesmoke;
 }
 a:visited {
     color: #222224;

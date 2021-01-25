@@ -24,31 +24,43 @@ export class DashboardComponent implements OnInit {
   @ViewChild('pokemonWrapper', { static: false }) pokemonWrapper: ElementRef;
   pokemonList;
   teamPoke;
+  infoPoke;
 
   constructor(private pokemonService: PokemonService) { }
   
   
   ngOnInit() {
 
-    this.pokemonService.multipleApiCall().subscribe((data) => {
+    this.pokemonService.getApiCall().subscribe((data) => {
       this.pokemonList = data;
       setTimeout(this.observer, 500);
     })
     
   }
 
-  addToTeam(teamPoke: Pokemon){
+  addToTeam(pokemon: Pokemon){
     this.pokemonService.addToTeam(this.teamPoke);
-  } //need to figure out how to add pokemon based on intersection observer
+  }
+
+  getInformation(pokemon: Pokemon){
+    this.pokemonService.getInformation(this.infoPoke);
+  }
 
   get teamMembers(){
     return this.pokemonService.getMyTeamList();
   }
 
+  // apiCall() {
+   
+  //     this.pokemonService.getApiCall().subscribe((data) => {
+  //       this.pokemonList = data;
+  //     })
+    
+  // }
+
   observer = () => {
-    let observerId;
+    let observerId: number;
     let individualCardDiv = document.querySelectorAll<HTMLElement>('.individualCard');
-    console.log(individualCardDiv);
     const options = {
       root: this.pokemonWrapper.nativeElement,
       rootMargin: '0px',
@@ -60,25 +72,22 @@ export class DashboardComponent implements OnInit {
        if (entry.intersectionRatio === 1) {
          observerId = (entry.target.firstChild.innerText) - 1;
         this.teamPoke = this.pokemonList[observerId];
-        console.log(individualCardDiv[observerId]);
-        individualCardDiv[observerId].firstChild['style'].fontSize = '2600%';
-        individualCardDiv[observerId].lastChild['style'].fontSize = '50px';
-        individualCardDiv[observerId].childNodes[1].firstChild['style'].height = '200px';
-       } else if (entry.intersectionRatio != 1){
-        individualCardDiv[observerId].firstChild['style'].fontSize = '1500%';
-        individualCardDiv[observerId].lastChild['style'].fontSize = '30px';
-        individualCardDiv[observerId].childNodes[1].firstChild['style'].height = '140px';
-       }
+        this.infoPoke = this.pokemonList[observerId];
+        if(observerId % 7 === 0 && observerId > 6){
+          this.pokemonService.getApiCall().subscribe((data) => {
+            this.pokemonList = data;
+            setTimeout(this.observer, 3000);
+          })
+        }
+       } 
       });
     };
   
     const observer = new IntersectionObserver(callback, options);
     for (const element of Array.from(individualCardDiv)){
       observer.observe(element);
+      
     }
-
   }
-
-  
 
 }

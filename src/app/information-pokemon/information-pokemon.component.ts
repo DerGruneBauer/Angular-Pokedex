@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Pokemon } from '../pokemon';
 import { PokemonService } from '../pokemon.service';
 import { PokemonsComponent } from '../pokemons/pokemons.component';
@@ -17,8 +18,14 @@ export class InformationPokemonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
+  get information(){
+    return this.pokemonService.returnInformation();
+  }
+
   get pokemons() {
-    return this.pokemonService.multipleApiCall();
+    return this.pokemonService.getApiCall();
   }
 
 
